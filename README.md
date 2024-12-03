@@ -1,106 +1,160 @@
-# Cảm biến siêu âm MKE-S01 Ultrasonic Distance Sensor
+# Mạch Vietduino Mega 2560 (Arduino Mega2560 Compatible)
+
+![](/image/vmega_01.jpg)
 
 ## Giới thiệu
 
-Cảm biến siêu âm MKE-S01 Ultrasonic Distance Sensor sử dụng sóng siêu âm để đo khoảng cách đến vật cản từ 3~200cm, cảm biến sử dụng IC xử lý, thạch anh chất lượng tốt cho độ bền, độ ổn định và độ chính xác cao, thích hợp để làm các loại robot tránh vật cản, chống trộm, đo khoảng cách,...
+Mạch Vietduino Mega 2560 (Arduino Mega 2560 Compatible) được nghiên cứu và và sản xuất bởi MakerLab.vn dựa trên nguyên mẫu là mạch Arduino Mega 2560 với các ưu điểm vượt trội:
 
-Cảm biến siêu âm MKE-S01 Ultrasonic Distance Sensor thuộc hệ sinh thái phần cứng Robotics MakerEdu nên có thể sử dụng trực tiếp an toàn với các mạch điều khiển trung tâm ở cả hai mức điện áp 3.3VDC và 5VDC như: Arduino, Raspberry Pi, Jetson Nano, Micro:bit,....với chuẩn kết nối Connector XH2.54 thông dụng.
-
-## Nguyên lý hoạt động
-
-Cảm biến siêu âm đo khoảng cách đến vật cản bằng cách phát sóng siêu âm từ mắt phát T (Transmitter) đến vật cản, sóng siêu âm khi đó sẽ bị phản xạ lại và truyền tới mắt thu R (Receiver), ghi nhận khoảng thời gian t quá trình này xảy ra bằng mạch xử lý kết hợp với vận tốc xác định của sóng siêu âm ta có thể tính được khoảng cách tương đối chính xác đến vật cản theo công thức:
-
-Khoảng cách đến vật cản L = (khoảng thời gian t * vận tốc sóng siêu âm) / 2
-
-![MKE_S01](/image/MKE_S01_1.jpg)
-- Minh họa sóng siêu âm từ phát phát T (Transmitter) đến vật cản bị phản xạ lại và truyền tới mắt thu R (Receiver).
-- Minh họa sóng siêu âm từ phát phát T (Transmitter) đến vật cản bị phản xạ lại và truyền tới mắt thu R (Receiver).
-
-Để tăng độ chính xác và giảm nhiễu, sóng siêu âm sẽ được mắt phát T (Transmitter) phát ra theo tần số chuyên biệt để không bị nhiễu với các loại sóng khác của môi trường, phương pháp đo khoảng cách bằng cảm biến siêu âm tương đối chính xác và ổn định, tuy nhiên vẫn có một nhược điểm của phương pháp này là phụ thuộc vào hình dạng của vật thể phản xạ, vật thể có bề mặt không phẳng sẽ làm ảnh hưởng đến độ phản xạ của sóng siêu âm dẫn đến kết quả đo kém chính xác. 
+1. Thiết kế tương thích hoàn toàn về hình dạng, chuẩn chân tín hiệu và cách sử dụng với Arduino Mega 2560.
+1. Sử dụng mạch nguồn xung giảm áp với ưu điểm là hiệu suất chuyển đổi cao, toả nhiệt thấp, tiết kiệm năng lượng, dải điện áp đầu vào cấp cho mạch rộng từ 6~24VDC với dòng đầu ra lớn: 5VDC/Max 1500mA, 3.3VDC / Max 700mA.
+1. Bổ sung thêm các chân cấp nguồn POWER+ 5VDC giúp dễ dàng cấp nguồn cho nhiều thiết bị khác nhau.
+1. Sử dụng IC chuyển đổi USB-UART CH340 được nhập khẩu chính hãng cho độ ổn định và độ bền cao.
+1. Chức năng cách ly nguồn cổng USB tự động khi cấp nguồn ngoài từ chân Vin hoặc giắc DC giúp bảo vệ cổng USB máy tính của bạn an toàn hơn.
 
 ## Thông số kỹ thuật
 
-- Model: MKE-S01
-- Điện áp hoạt động: 5VDC
-- Chuẩn giao tiếp: Digital
-- Điện áp giao tiếp: TTL 3.3VDC / 5VDC
-- Dòng điện hoạt động: 65mA
-- Tần số hoạt động: 40Khz
-- Khoảng cách đo được: 3-200cm
-- Góc quét: 15°
-- Tín hiệu ngõ vào Trigger: 10μs TTL pulse
-- Sử dụng trực tiếp an toàn với các board mạch giao tiếp ở cả hai mức điện áp 3.3VDC và 5VDC như: Arduino, Raspberry Pi, Jetson Nano, Micro:bit,....
-- Bổ sung thêm các thiết kế ổn định, chống nhiễu.
-- Chuẩn kết nối: connector XH2.54 4Pins
-- Thuộc hệ sinh thái phần cứng Robotics MakerEdu, tương thích tốt nhất khi sử dụng với các mạch điều khiển trung tâm của MakerEdu và MakerEdu Shield.
+<table><thead>
+  <tr>
+    <th>Model</th>
+    <th>Mạch Vietduino Mega 2560 (Arduino Mega 2560 Compatible)</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Vi điều khiển</td>
+    <td>ATMEGA2560-16AU</td>
+  </tr>
+  <tr>
+    <td>Điện áp hoạt động</td>
+    <td>5VDC</td>
+  </tr>
+  <tr>
+    <td>Điện áp đầu vào VIN</td>
+    <td>6~24VDC</td>
+  </tr>
+  <tr>
+    <td>Digital I/O</td>
+    <td>54 chân (D0-D53)</td>
+  </tr>
+  <tr>
+    <td>PWM Digital I/O</td>
+    <td>15 chân (D2-D13, D44-D46)</td>
+  </tr>
+  <tr>
+    <td>Analog Input</td>
+    <td>16 chân (A0-A15)</td>
+  </tr>
+  <tr>
+    <td>Dòng DC đầu ra các chân I/O</td>
+    <td>20mA</td>
+  </tr>
+  <tr>
+    <td>Dòng DC đầu ra chân 3V3</td>
+    <td>Max 700mA</td>
+  </tr>
+  <tr>
+    <td>Dòng DC đầu ra chân 5V</td>
+    <td>Max 1500mA</td>
+  </tr>
+  <tr>
+    <td>Flash Memory</td>
+    <td>256KB of which 8 KB used by bootloader</td>
+  </tr>
+  <tr>
+    <td>SRAM</td>
+    <td>8KB</td>
+  </tr>
+  <tr>
+    <td>EEPROM</td>
+    <td>4KB</td>
+  </tr>
+  <tr>
+    <td>Clock Speed</td>
+    <td>16MHz</td>
+  </tr>
+  <tr>
+    <td>LED_BUILTIN</td>
+    <td>D13</td>
+  </tr>
+  <tr>
+    <td>BUTTON_BUILTIN</td>
+    <td>S8 (D8)</td>
+  </tr>
+  <tr>
+    <td>IC nạp chương trình và giao tiếp UART</td>
+    <td>CP2102</td>
+  </tr>
+  <tr>
+    <td>Cổng giao tiếp máy tính</td>
+    <td>USB-B</td>
+  </tr>
+  <tr>
+    <td>Kích thước</td>
+    <td>101.6 x 53.35mm</td>
+  </tr>
+</tbody></table>
+
+## Kích thước
+
+![](/image/vmega_02.jpg)
 
 ## Hình ảnh sản phẩm
 
-![MKE_S01](/image/MKE_S01_2.jpg)
+![](/image/vmega_03.jpg)
+![](/image/vmega_04.jpg)
 
-![MKE_S01](/image/MKE_S01_3.jpg)
+## Hướng dẫn sử dụng với phần mềm Arduino
 
-## Kích thước sản phẩm
+### Hướng dẫn sử dụng phần mềm Arduino cơ bản
 
-![MKE_S01](/image/MKE_S01_4.JPG)
+1) Giới thiệu về Arduino
 
-## Các chân tín hiệu
+2) Ngôn ngữ lập trình Arduino
 
-- GND:	Chân cấp nguồn âm 0VDC
-- 5V:	Chân cấp nguồn dương 5VDC
-- TRIG:	Chân tín hiệu ngõ vào Trigger (Input: 3.3~5VDC)
-- ECHO:	Chân tín hiệu ngõ ra Echo (Output: 3.3VDC)
+3) Cách cài đặt phần mềm Arduino IDE
 
-## Hướng dẫn sử dụng
+4) Cách cài đặt Driver và nạp chương trình cho mạch Arduino / Arduino Compatible
 
-### Các thiết bị sử dụng trong bài hướng dẫn:
+5) Cách cài đặt các thư viện phần cứng Arduino Library
 
-#### Arduino:
-- [Mạch Vietduino Uno (Arduino Uno Compatible)](https://www.makerlab.vn/vuno)
-- [Mạch MakerEdu Shield for Vietduino](https://www.makerlab.vn/vietduinosd)
-- [Mạch màn hình MKE-M07 LCD1602 I2C Display Module](https://www.makerlab.vn/mkem07)
+6) Cách sử dụng Serial Monitor & Serial Plotter trên phần mềm Arduino
 
-#### mBlock:
+### Hướng dẫn kết nối và nạp chương trình cho Mạch Vietduino Mega 2560 trên phần mềm Arduino
 
-- [Mạch MakerEdu Creator (Arduino Uno Compatible)](https://www.makerlab.vn/creator)
-- [Mạch màn hình MKE-M07 LCD1602 I2C Display Module](https://www.makerlab.vn/mkem07)
+1) Kết nối máy tính: Kết nối Mạch Vietduino Mega 2560 với máy tính bằng cáp USB sẽ thấy Led nguồn PWR trên mạch phát sáng.
 
-#### Micro:bit:
+2) Cài đặt Driver: Mạch Vietduino Mega 2560 mà một mạch Arduino Mega 2560 Compatible (tương thích Arduino Mega 2560) sử dụng IC nạp chương trình và giao tiếp máy tính CP2102, các bạn có thể tham khảo Hướng dẫn cài đặt Driver cho các mạch sử dụng IC giao tiếp USB-UART CP210x - MakerLab Wiki.
 
-- [Mạch Micro:bit V2](https://hshop.vn/products/kit-hoc-lap-trinh-stem-cho-tre-em-micro-bit-v2) hoặc các phiên bản tương thích.
-- [Mạch MakerEdu Shield for Micro:bit](https://www.makerlab.vn/microbitsd)
-- [Mạch màn hình MKE-M07 LCD1602 I2C Display Module](https://www.makerlab.vn/mkem07)
+3) Cấu hình mạch trên phần mềm Arduino: Để cấu hình mạch trên phần mềm Arduino chúng ta cần làm các bước sau:
 
-### Hướng dẫn sử dụng với Arduino (Code C)
-[Hướng dẫn cài đặt phần mềm, nạp chương trình, cài đặt bộ thư viện Arduino cơ bản.](https://github.com/makerlabvn/Arduino-Vietduino)
-- Tải và cài đặt [phần mềm Arduino tại đây.](https://www.arduino.cc/en/software)
-- Trong Tools / Library Manager, tìm và cài đặt bộ thư viện tổng hợp "MAKERLABVN" by MakerLab.vn
-- Mở chương trình mẫu "MKE_S01_Ultrasonic_LCD_Serial.ino" tại File / Examples / MAKERLABVN / Sensor / MKE_S01_Ultrasonic hoặc [tải chương trình mẫu tại đây](/arduino)
-- Chọn board là Arduino Uno (mạch Vietduino Uno tương thích với Arduino Uno), chọn đúng cổng COM Port của mạch và tiến hành nạp chương trình.
-- Kết nối mạch Vietduino Uno với MakerEdu Shield, kết nối cảm biến tại cổng [D12,13] và màn hình LCD vào cổng [I2C] trên MakerEdu Shield, cấp nguồn qua cổng USB của Vietduino Uno để thấy chương trình hoạt động.
+- Thiết lập Board tại Tools > Board > Arduino AVR Boards > Arduino Mega or Mega 2560 và Port (cổng kết nối) cho mạch, nếu không xác định được cổng kết nối có thể ngắt kết nối mạch và kết nối lại đồng thời kiểm tra phần Port để thấy cổng kết nối mới của mạch xuất hiện:
+![](/image/vmega_05.jpg)
+- Sau khi đã hoàn thành các thiết lập cơ bản bạn có thể nạp chương trình Blink sau vào mạch để test bằng cách nhấn vào nút Upload hoặc chọn Sketch > Upload sẽ thấy Led được kết nối với chân D13 trên mạch chớp tắt 1 giây 1 lần:
 
-### Hướng dẫn lập trình với mBlock (kéo thả khối)
-[Hướng dẫn cài đặt phần mềm, nạp chương trình, cài đặt Extension mBlock cơ bản.](https://github.com/makerlabvn/mBlock-MakerEdu-Creator)
-- Tải và cài đặt phần mềm mBlock 5 ([Windows](https://www.mediafire.com/file/ma55iajd7glwmbo/%255BMakerLab.vn%255D_mBlock_V5.4.3_for_Windows.zip/file) / [Mac Intel](https://www.mediafire.com/file/pjfngy6d7ktb55f/%255BMakerLab.vn%255D_mBlock_V5.4.3_for_Mac_Intel.zip/file) / [Mac M1M2](https://www.mediafire.com/file/mfdkgpgnpa7uv2s/%255BMakerLab.vn%255D_mBlock_V5.4.3_for_Mac_M1M2.zip/file))
-- Thêm Device "MakerEdu Creator" by MakerEduVN
-- Thêm Extension "Upload Mode Broadcast" by mBlock Official
-- Thêm Extension "MakerEdu Hardware" by MakerEduVN
-- Mở [chương trình mẫu tại đây](/mBlock5), kết nối MakerEdu Creator với máy tính và nạp chương trình.
-- Kết nối cảm biến với cổng [D3,D2] và màn hình LCD vào cổng [I2C] trên MakerEdu Creator, cấp nguồn qua cổng USB của MakerEdu Creator để thấy chương trình hoạt động.
+```ino
+/*
+  Blink
+  Turns an LED_BUILTIN on D13 of Vietduino Mega 2560 for one second, then off for one second, repeatedly.
+*/
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN on D13 as an output.
+  pinMode(13, OUTPUT);
+}
 
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(13, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(13, LOW);   // turn the LED off by making the voltage LOW
+  delay(1000);                      // wait for a second
+}
+```
 
-### Hướng dẫn lập trình với Micro:bit (kéo thả khối)
-[Hướng dẫn nạp chương trình, cài đặt Extension Micro:bit cơ bản.](https://github.com/makerlabvn/MakeCode-microbit)
-- Khởi động phần mềm MakeCode tại: [https://makecode.microbit.org/](https://makecode.microbit.org/)
-- Chọn My Projects / Import / Import URL theo đường link của chương trình mẫu: [https://github.com/devmakerlabvn/makecode-mke-s01-ultrasonic-distance-sensor](https://github.com/devmakerlabvn/makecode-mke-s01-ultrasonic-distance-sensor)
-- Kết nối Micro:bit với máy tính và nạp chương trình.
-- Kết nối mạch Micro:bit với MakerEdu Shield, kết nối cảm biến tại cổng [P0+P1] và màn hình LCD vào cổng [I2C] trên MakerEdu Shield, **cấp nguồn qua cổng USB của MakerEdu Shield** để thấy chương trình hoạt động.
-
-## Hỗ trợ và liên hệ:
-
-- Website: [https://www.makerlab.vn/](https://www.makerlab.vn/)
-- Facebook: [https://www.facebook.com/makerlabvn](https://www.facebook.com/makerlabvn)
+![](/image/vmega_06.jpg)
 
 ## Nhà phân phối
 
-- Các bạn có thể mua sản phẩm của MakerLab tại các [Nhà Phân Phối.](https://www.makerlab.vn/distributor/)
+Có thể mua Mạch Vietduino Mega 2560 tại các nhà phân phối sau:
+
+- [Hshop.vn - Điện tử & Robot.](https://hshop.vn)
